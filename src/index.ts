@@ -1,3 +1,4 @@
-export const hello = (name: string): string => {
-    return `hello ${name}`;
+// 계산기 진입점
+export const Calculator = (expression: string): number => {
+    return 0;
 };
