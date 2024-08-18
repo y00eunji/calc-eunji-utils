@@ -4,6 +4,7 @@
     "module": "esnext",
     "outDir": "dist/mjs",
     "target": "esnext",
-    "moduleResolution": "Node"
+    "moduleResolution": "Node",
+    "lib": ["es2016", "dom"]
   },
 }

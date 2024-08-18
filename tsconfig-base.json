@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES5",
+    "lib": ["es2016", "dom"],
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": "src",
@@ -16,7 +17,7 @@
     "rootDir": "src",
     "skipLibCheck": true,
     "strict": true,
-    "traceResolution": false
+    "traceResolution": false,
   },
   "compileOnSave": false,
   "exclude": ["node_modules", "dist"],
