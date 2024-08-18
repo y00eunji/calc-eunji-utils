@@ -1,6 +1,6 @@
 // 계산을 수행하는 로직을 포함합니다. 연산자에 따라 우선순위를 처리하고 최종 결과를 반환합니다.
-import { parseExpression } from './parser';
-import { calculateWithOperator } from './operator';
+import { parseExpression } from './parser.js';
+import { calculateWithOperator } from './operator.js';
 
 export function evaluateExpression(expressionArr: (number | string)[]): number {
     const highPriorityOps: (number | string)[] = [];
