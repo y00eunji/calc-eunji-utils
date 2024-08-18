@@ -6,10 +6,7 @@ export function evaluateExpression(expressionArr) {
     let i = 0;
     while (i < expressionArr.length) {
         const current = expressionArr[i];
-        if (typeof current === 'number') {
-            highPriorityOps.push(current);
-        }
-        else if (current === '*' || current === '/') {
+        if (current === '*' || current === '/') {
             const prevNumber = highPriorityOps.pop();
             const nextNumber = expressionArr[++i];
             const result = calculateWithOperator(prevNumber, nextNumber, current);

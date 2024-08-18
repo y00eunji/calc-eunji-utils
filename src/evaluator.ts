@@ -9,16 +9,14 @@ export function evaluateExpression(expressionArr: (number | string)[]): number {
     while (i < expressionArr.length) {
         const current = expressionArr[i];
 
-        if (typeof current === 'number') {
-            highPriorityOps.push(current);
-        } else if (current === '*' || current === '/') {
+     if (current === '*' || current === '/') {
             const prevNumber = highPriorityOps.pop() as number;
             const nextNumber = expressionArr[++i] as number;
             const result = calculateWithOperator(prevNumber, nextNumber, current);
             highPriorityOps.push(result);
-        } else {
-            highPriorityOps.push(current);
-        }
+     }else{
+         highPriorityOps.push(current);
+     }
         i++;
     }
 
