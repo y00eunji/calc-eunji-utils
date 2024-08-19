@@ -26,7 +26,7 @@ function computeFinalResult(stack) {
         const nextNumber = stack.shift();
         result = calculateWithOperator(result, nextNumber, operator);
     }
-    return result;
+    return result === -0 ? 0 : result;
 }
 export default (expression) => {
     const operators = ['+', '-', '*', '/'];

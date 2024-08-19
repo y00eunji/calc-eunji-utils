@@ -33,7 +33,7 @@ function computeFinalResult(stack: (number | string)[]): number {
         result = calculateWithOperator(result, nextNumber, operator);
     }
 
-    return result;
+    return result === -0 ? 0 : result;
 }
 
 export default (expression: string): number => {

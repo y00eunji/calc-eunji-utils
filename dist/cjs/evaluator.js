@@ -29,7 +29,7 @@ function computeFinalResult(stack) {
         const nextNumber = stack.shift();
         result = (0, operator_js_1.calculateWithOperator)(result, nextNumber, operator);
     }
-    return result;
+    return result === -0 ? 0 : result;
 }
 exports.default = (expression) => {
     const operators = ['+', '-', '*', '/'];
