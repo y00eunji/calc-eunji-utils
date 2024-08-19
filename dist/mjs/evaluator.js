@@ -6,15 +6,13 @@ export function evaluateExpression(expressionArr) {
     let i = 0;
     while (i < expressionArr.length) {
         const current = expressionArr[i];
+        let result;
         if (current === '*' || current === '/') {
             const prevNumber = highPriorityOps.pop();
             const nextNumber = expressionArr[++i];
-            const result = calculateWithOperator(prevNumber, nextNumber, current);
-            highPriorityOps.push(result);
+            result = calculateWithOperator(prevNumber, nextNumber, current);
         }
-        else {
-            highPriorityOps.push(current);
-        }
+        highPriorityOps.push(result ? result : current);
         i++;
     }
     return computeFinalResult(highPriorityOps);
