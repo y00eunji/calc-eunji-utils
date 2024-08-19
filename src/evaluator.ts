@@ -25,7 +25,7 @@ export function evaluateExpression(expressionArr: (number | string)[]): number {
 
 function computeFinalResult(stack: (number | string)[]): number {
     let result = stack.shift() as number;
-
+    console.log(stack)
     while (stack.length > 0) {
         const operator = stack.shift() as string;
         const nextNumber = stack.shift() as number;
