@@ -8,14 +8,15 @@ export function evaluateExpression(expressionArr: (number | string)[]): number {
 
     while (i < expressionArr.length) {
         const current = expressionArr[i];
-        let result;
 
      if (current === '*' || current === '/') {
             const prevNumber = highPriorityOps.pop() as number;
             const nextNumber = expressionArr[++i] as number;
-            result = calculateWithOperator(prevNumber, nextNumber, current);
+            const result = calculateWithOperator(prevNumber, nextNumber, current);
+            highPriorityOps.push(result);
+     }else{
+         highPriorityOps.push(current);
      }
-        highPriorityOps.push(result ? result : current);
         i++;
     }
 

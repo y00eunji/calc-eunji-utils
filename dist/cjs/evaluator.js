@@ -9,13 +9,15 @@ function evaluateExpression(expressionArr) {
     let i = 0;
     while (i < expressionArr.length) {
         const current = expressionArr[i];
-        let result;
         if (current === '*' || current === '/') {
             const prevNumber = highPriorityOps.pop();
             const nextNumber = expressionArr[++i];
-            result = (0, operator_js_1.calculateWithOperator)(prevNumber, nextNumber, current);
+            const result = (0, operator_js_1.calculateWithOperator)(prevNumber, nextNumber, current);
+            highPriorityOps.push(result);
         }
-        highPriorityOps.push(result ? result : current);
+        else {
+            highPriorityOps.push(current);
+        }
         i++;
     }
     return computeFinalResult(highPriorityOps);
