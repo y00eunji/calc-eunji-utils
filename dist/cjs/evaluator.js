@@ -24,7 +24,6 @@ function evaluateExpression(expressionArr) {
 }
 function computeFinalResult(stack) {
     let result = stack.shift();
-    console.log(stack);
     while (stack.length > 0) {
         const operator = stack.shift();
         const nextNumber = stack.shift();

@@ -10,7 +10,7 @@ export function calculateWithOperator(prev: number, next: number, operator: stri
         case '/':
             return divide(prev, next);
         default:
-            throw new Error(`잘못된 연산자: ${operator}`);
+            throw new Error(`잘못된 연산자: ${operator} ${prev} ${next}`);
     }
 }
 
