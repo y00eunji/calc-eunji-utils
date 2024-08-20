@@ -1,5 +1,7 @@
 // 연산 수행을 위한 함수 모듈입니다.
-export function calculateWithOperator(prev: number, next: number, operator: string): number {
+import {errorMessage} from "./error";
+
+export function calculateWithOperator(prev: number, next: number, operator: string) {
     switch (operator) {
         case '+':
             return add(prev, next);
@@ -10,7 +12,7 @@ export function calculateWithOperator(prev: number, next: number, operator: stri
         case '/':
             return divide(prev, next);
         default:
-            throw new Error(`잘못된 연산자: ${operator} ${prev} ${next}`);
+            errorMessage('operator')
     }
 }
 
@@ -28,7 +30,7 @@ function multiply(a: number, b: number): number {
 
 function divide(a: number, b: number): number {
     if (b === 0) {
-        throw new Error("0으로 나눌 없습니다.");
+        errorMessage('divide')
     }
     return a / b;
 }

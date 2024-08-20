@@ -13,7 +13,7 @@ export function evaluateExpression(expressionArr: (number | string)[]): number {
             const prevNumber = highPriorityOps.pop() as number;
             const nextNumber = expressionArr[++i] as number;
             const result = calculateWithOperator(prevNumber, nextNumber, current);
-            highPriorityOps.push(result);
+            highPriorityOps.push(result as number);
      }else{
          highPriorityOps.push(current);
      }
@@ -30,7 +30,7 @@ function computeFinalResult(stack: (number | string)[]): number {
         const operator = stack.shift() as string;
         const nextNumber = stack.shift() as number;
 
-        result = calculateWithOperator(result, nextNumber, operator);
+        result = calculateWithOperator(result, nextNumber, operator) as number;
     }
 
     return result === -0 ? 0 : result;
