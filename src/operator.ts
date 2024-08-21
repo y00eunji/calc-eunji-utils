@@ -32,5 +32,8 @@ function divide(a: number, b: number): number {
     if (b === 0) {
         errorMessage('divide')
     }
-    return a / b;
+
+    const result = a / b;
+
+    return +result.toFixed(6);
 }

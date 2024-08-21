@@ -30,5 +30,6 @@ function divide(a, b) {
     if (b === 0) {
         (0, error_1.errorMessage)('divide');
     }
-    return a / b;
+    const result = a / b;
+    return +result.toFixed(6);
 }
