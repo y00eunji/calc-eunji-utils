@@ -6,5 +6,5 @@ import {errorMessage} from "./error";
 export function Calculator(expression: string): number {
     if(!isValidExpression(expression)) errorMessage('expression')
 
-    return evaluator(expression);
+    return +evaluator(expression).toFixed(8);
 }

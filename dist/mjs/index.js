@@ -5,5 +5,5 @@ import { errorMessage } from "./error";
 export function Calculator(expression) {
     if (!isValidExpression(expression))
         errorMessage('expression');
-    return evaluator(expression);
+    return +evaluator(expression).toFixed(8);
 }

@@ -11,5 +11,5 @@ const error_1 = require("./error");
 function Calculator(expression) {
     if (!(0, validate_js_1.default)(expression))
         (0, error_1.errorMessage)('expression');
-    return (0, evaluator_js_1.default)(expression);
+    return +(0, evaluator_js_1.default)(expression).toFixed(8);
 }

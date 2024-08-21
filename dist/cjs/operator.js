@@ -27,9 +27,7 @@ function multiply(a, b) {
     return a * b;
 }
 function divide(a, b) {
-    if (b === 0) {
+    if (b === 0)
         (0, error_1.errorMessage)('divide');
-    }
-    const result = a / b;
-    return +result.toFixed(6);
+    return a / b;
 }

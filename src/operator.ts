@@ -29,11 +29,7 @@ function multiply(a: number, b: number): number {
 }
 
 function divide(a: number, b: number): number {
-    if (b === 0) {
-        errorMessage('divide')
-    }
+    if (b === 0) errorMessage('divide')
 
-    const result = a / b;
-
-    return +result.toFixed(6);
+    return a / b;
 }
