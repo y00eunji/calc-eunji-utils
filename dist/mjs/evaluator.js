@@ -29,7 +29,6 @@ function computeFinalResult(stack) {
     return result === -0 ? 0 : result;
 }
 export default (expression) => {
-    const operators = ['+', '-', '*', '/'];
-    const expressionArr = parseExpression(expression, operators);
+    const expressionArr = parseExpression(expression, ['+', '-', '*', '/']);
     return evaluateExpression(expressionArr);
 };
