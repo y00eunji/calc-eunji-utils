@@ -7,8 +7,10 @@ export function Calculator(expression) {
     if (!isValidExpression(expression))
         errorMessage('Expression');
     const result = evaluator(expression);
-    if (typeof result === 'bigint') {
+    if (result.toString().includes('e')) {
         return errorMessage("InfinityNumber");
     }
-    return +result.toFixed(8);
+    else {
+        return +result.toFixed(8);
+    }
 }

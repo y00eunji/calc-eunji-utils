@@ -36,7 +36,7 @@ function computeFinalResult(stack: (number | string)[]): number {
     return result === -0 ? 0 : result;
 }
 
-export default (expression: string): number | bigint => {
+export default (expression: string): number => {
     const expressionArr = parseExpression(expression, ['+', '-', '*', '/']);
     return evaluateExpression(expressionArr);
 };

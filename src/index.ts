@@ -9,9 +9,9 @@ export function Calculator(expression: string) {
 
 
     const result = evaluator(expression)
-    if (typeof result === 'bigint') {
+    if (result.toString().includes('e')) {
         return errorMessage("InfinityNumber");
+    }else{
+        return +result.toFixed(8);
     }
-
-    return +result.toFixed(8);
 }
