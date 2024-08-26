@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.calculateWithOperator = calculateWithOperator;
 // 연산 수행을 위한 함수 모듈입니다.
-const error_1 = require("./error");
+const error_1 = require("./error/error");
 function calculateWithOperator(prev, next, operator) {
     switch (operator) {
         case '+':
@@ -14,7 +14,7 @@ function calculateWithOperator(prev, next, operator) {
         case '/':
             return divide(prev, next);
         default:
-            (0, error_1.errorMessage)('operator');
+            (0, error_1.errorMessage)('Operator');
     }
 }
 function add(a, b) {
@@ -28,6 +28,6 @@ function multiply(a, b) {
 }
 function divide(a, b) {
     if (b === 0)
-        (0, error_1.errorMessage)('divide');
+        (0, error_1.errorMessage)('Divide');
     return a / b;
 }
