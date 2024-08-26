@@ -23,7 +23,7 @@ function hasUnmatchedParentheses(expression) {
 }
 // 연산자가 두 개 연속으로 오는 경우
 function hasConsecutiveOperators(expression) {
-    return /([\+\*/]-)|([+\*/]{2,})/.test(expression);
+    return /[+\*/]{2,}|([+\*/]-[^\d])/g.test(expression);
 }
 export function isValidExpression(expression) {
     if (isOnlyNumber(expression))
