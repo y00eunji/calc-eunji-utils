@@ -27,11 +27,11 @@ function hasConsecutiveOperators(expression) {
 }
 export function isValidExpression(expression) {
     if (isOnlyNumber(expression))
-        errorMessage("OnlyNumber");
+        return errorMessage("OnlyNumber");
     if (endsWithOperator(expression))
-        errorMessage("EndWithOperator");
+        return errorMessage("EndWithOperator");
     // if (hasUnmatchedParentheses(expression)) return false;
     if (hasConsecutiveOperators(expression))
-        errorMessage("ConsecutiveOperators");
+        return errorMessage("ConsecutiveOperators");
     return /^-?\d+(?:[+\-*/]-?\d+)*$/.test(expression);
 }

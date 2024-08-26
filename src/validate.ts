@@ -27,14 +27,14 @@ function hasConsecutiveOperators(expression: string): boolean {
     return /[+\*/]{2,}|([+\*/]-[^\d])/g.test(expression);
 }
 
-export function isValidExpression(expression: string): boolean {
-    if (isOnlyNumber(expression)) errorMessage("OnlyNumber");
+export function isValidExpression(expression: string) {
+    if (isOnlyNumber(expression)) return errorMessage("OnlyNumber");
 
-    if (endsWithOperator(expression)) errorMessage("EndWithOperator");
+    if (endsWithOperator(expression)) return errorMessage("EndWithOperator");
 
     // if (hasUnmatchedParentheses(expression)) return false;
 
-    if (hasConsecutiveOperators(expression)) errorMessage("ConsecutiveOperators");
+    if (hasConsecutiveOperators(expression)) return errorMessage("ConsecutiveOperators");
 
     return /^-?\d+(?:[+\-*/]-?\d+)*$/.test(expression);
 }

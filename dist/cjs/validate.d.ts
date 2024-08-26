@@ -1,1 +1,1 @@
-export declare function isValidExpression(expression: string): boolean;
+export declare function isValidExpression(expression: string): boolean | void;
