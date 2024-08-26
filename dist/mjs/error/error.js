@@ -5,7 +5,8 @@ const ERROR_MESSAGE = Object.freeze({
     Divide: "0으로 나눌 수 없음",
     OnlyNumber: "숫자만 입력됐습니다",
     EndWithOperator: "식이 연산자로 끝났습니다",
-    ConsecutiveOperators: "연산자가 연속으로 있습니다"
+    ConsecutiveOperators: "연산자가 연속으로 있습니다",
+    InfinityNumber: "무한대입니다(연산불가)"
 });
 export function errorMessage(key) {
     const message = ERROR_MESSAGE[key];

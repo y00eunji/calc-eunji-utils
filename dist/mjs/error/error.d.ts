@@ -5,6 +5,7 @@ declare const ERROR_MESSAGE: Readonly<{
     readonly OnlyNumber: "숫자만 입력됐습니다";
     readonly EndWithOperator: "식이 연산자로 끝났습니다";
     readonly ConsecutiveOperators: "연산자가 연속으로 있습니다";
+    readonly InfinityNumber: "무한대입니다(연산불가)";
 }>;
 type ErrorMessageKeys = keyof typeof ERROR_MESSAGE;
 export declare function errorMessage(key: ErrorMessageKeys): void;

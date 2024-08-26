@@ -13,8 +13,8 @@ function Calculator(expression) {
     if (!(0, validate_js_1.isValidExpression)(expression))
         (0, error_1.errorMessage)('Expression');
     const result = (0, evaluator_js_1.default)(expression);
-    if (typeof result === 'bigint') { // BigInt인 경우: 문자열로 변환하여 처리
-        return result.toString();
+    if (typeof result === 'bigint') {
+        return (0, error_1.errorMessage)("InfinityNumber");
     }
     return +result.toFixed(8);
 }
