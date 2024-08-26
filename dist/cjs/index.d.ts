@@ -1,1 +1,1 @@
-export declare function Calculator(expression: string): string;
+export declare function Calculator(expression: string): string | number;

@@ -13,5 +13,5 @@ export function Calculator(expression: string) {
         return result.toString();
     }
 
-    return result.toFixed(8);
+    return +result.toFixed(8);
 }

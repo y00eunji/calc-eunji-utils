@@ -10,5 +10,5 @@ export function Calculator(expression) {
     if (typeof result === 'bigint') { // BigInt인 경우: 문자열로 변환하여 처리
         return result.toString();
     }
-    return result.toFixed(8);
+    return +result.toFixed(8);
 }
